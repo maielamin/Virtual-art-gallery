@@ -62,7 +62,7 @@ module.exports = (regl, data) => {
         }
 
         vec3 hsv2rgb(vec3 c) {
-            vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+            vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0); 
             vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
             return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
         }
@@ -93,7 +93,8 @@ module.exports = (regl, data) => {
             }else if(v_normal.y == 0.0){
                 totalLight *= 0.5*border(v_pos.y) + 0.5;
             }
-            totalLight = pow(totalLight, vec3(1.0/2.2));
+            // totalLight = pow(totalLight, vec3(1.0/2.2));
+            totalLight = pow(totalLight, vec3(0.129,0.145,0.161));
             gl_FragColor = vec4(totalLight, 1.975-v_normal.y);
         }`,
 
