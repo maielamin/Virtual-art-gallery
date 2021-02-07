@@ -48,6 +48,7 @@ const context = regl({
 			}) =>
 			mat4.perspective(proj, fovY, viewportWidth / viewportHeight, 0.1, 100)
 	}
+	
 });
 
 const reflexion = regl({
@@ -82,4 +83,5 @@ regl.frame(({
 		drawMap();
 		drawPainting(placement.batch());
 	});
+
 });
